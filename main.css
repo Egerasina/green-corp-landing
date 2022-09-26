@@ -1,7 +1,84 @@
+/* main{
+  width: 95%;
+  margin: auto;
+} */
+
+
+@media (max-width: 1024px) {
+  .about {
+      padding: 115px 20px;
+  }
+
+  .about h1 {
+      font-size: 36px;
+      line-height: 40px;
+  }
+
+  .about__image {
+      width: 280px;
+  }
+
+  .about__sun-image {
+      width: 75px;
+      height: 75px;
+  }
+}
+
+
+@media (max-width: 720px) {
+  header {
+      padding: 10px;
+  }
+
+  .header__logo {
+      height: 20px;
+  }
+
+  header a {
+      margin-right: 10px;
+  }
+
+  .about {
+      flex-direction: column-reverse;
+      padding: 50px 10px;
+  }
+
+  .about h1 {
+      font-size: 36px;
+      line-height: 40px;
+  }
+
+  .about__image {
+      width: 280px;
+  }
+
+  .about__sun-image {
+      width: 75px;
+      height: 75px;
+  }
+
+  .form {
+      padding: 50px 10px;
+  }
+
+  .form h1 {
+      font-size: 36px;
+  }
+
+  footer {
+      padding: 50px 10px;
+  }
+
+  .footer__container {
+      flex-direction: column;
+  }
+}
+
 body {
     font-family: 'Raleway', sans-serif;
     color: #213053;
     margin: 0;
+  
   }
 
 header{
@@ -9,7 +86,11 @@ header{
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: white;
+    
 }
 .header__logo{
     height: 30px;
@@ -35,36 +116,29 @@ a {
     box-shadow: 0 16px 36px rgb(52 213 68 / 22%);
     padding: 15px;
   }
-  .about__image {
-    width: 500px;
-  }
-   
-  .about__sun-image {
-    width: 100px;
-    height: 100px;
-  }
-  .about {
+
+.about {
 display:flex;
 justify-content: space-around;
 align-items: center;
 padding-top: 115px;
 padding-bottom: 115px;
 background: url('img/back.png') no-repeat;
-  background-position: center;
-  background-size: cover;
+background-position: center;
+background-size: cover;
   }
-  .about h1{
+.about h1{
     font-size: 70px;
     line-height: 76px;
 
   }
-  .about p{
+.about p{
     font-size: 18px;
     line-height: 30px;
     opacity: 0.8;
       }
     
-      .about button{
+.about button{
         font-size: 18px;
         border-radius: 20px;
         padding: 20px 25px;
@@ -74,6 +148,24 @@ background: url('img/back.png') no-repeat;
 .about__info {
             max-width: 550px;
           }
+.about__image {
+            width: 500px;
+          }
+.about__sun-image {
+            width: 100px;
+            height: 100px;
+            animation: spin 10s linear infinite;
+            position: absolute;
+          }
+@keyframes spin{
+            0%{
+              transform: rotate(0);
+            }
+            100%{
+              transform: rotate(360deg);
+            }
+          }
+        
 .form__container{
           width: 550px;
         }
@@ -81,11 +173,12 @@ background: url('img/back.png') no-repeat;
 .form{
   background-color: #1D263A;
   color: #fff;
-  padding-top: 115px; padding-bottom: 115px;
+  padding-top: 115px; 
+  padding-bottom: 115px;
   text-align: center;
   display: flex; 
-    justify-content: center; 
-    align-items: center;
+  justify-content: center; 
+  align-items: center;
   }
 
   .form h1{
@@ -111,6 +204,7 @@ background: url('img/back.png') no-repeat;
   .form label{
 font-size: 18px;
 font-weight: 600;
+margin-bottom: 20px;
   }
 
 .form input{
@@ -121,16 +215,18 @@ font-weight: 600;
     padding: 0 20px;
     border-radius: 15px;
     border:none;
+    outline: none;
   }
 
-      .form select{
-        font-size: 18px;
-        font-weight: 600;
-        color:  #213053;
-        height: 60px;
+.form select{
+    font-size: 18px;
+    font-weight: 600;
+    color:  #213053;
+    height: 60px;
     padding: 0 20px;
     border-radius: 15px;
     border:none;
+    outline: none;
     }
 
 .form__submit{
@@ -171,7 +267,7 @@ footer{
   .footer__group{
     margin-right: 80px;
   }
-  .footer__group h3{
+  .footer h3{
     font-size: 16px;
     opacity: 0.7;
     margin-bottom: 30px;
